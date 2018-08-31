@@ -1,10 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/> -->
     <div class="t">云巢数据</div>
     <div class="b">
       <div class="l">
@@ -18,6 +13,7 @@
         <div class="rb"></div>
       </div>
     </div>
+    <!-- <DemoMap></DemoMap> -->
   </div>
 </template>
 
@@ -25,11 +21,13 @@
 // @ is an alias to /src
 import VeBar from "@/components/VeBar.vue";
 import VeMap from "@/components/VeMap.vue";
+import DemoMap from "@/components/Demo.vue";
 export default {
   name: "App",
   components: {
     VeBar,
-    VeMap
+    VeMap,
+    DemoMap
   }
 };
 </script>
@@ -56,10 +54,10 @@ export default {
   flex: 9;
   display: flex;
   .l {
-    flex: 3;
+    flex: 2;
   }
   .r {
-    flex: 7;
+    flex: 8;
     display: flex;
     flex-direction: column;
     .rt{
@@ -67,7 +65,7 @@ export default {
       display: flex;
       .rtl{
         flex: 40;
-        background-color: yellow;
+        // background-color: yellow;
       }
       .rtr{
         flex: 60;

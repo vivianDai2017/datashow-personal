@@ -21,7 +21,7 @@ export default {
       let baifenbi = [0.111, 0.333, 0.444, 0.555, 0.777, 0.888, 0.922];
       let grayBar = [1, 1, 1, 1, 1, 1, 1];
       let paiming = [7, 6, 5, 4, 3, 2, 1];
-      let zongjine = [20000000, 30000000, 40000000, 50000000, 60000000, 70000000, 91230000];
+      let zongjine = [2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 9123000];
       let fenpeijine = [
         1110000,
         20000,
@@ -110,7 +110,7 @@ export default {
                 textStyle: {
                   color: "#000" //百分比颜色
                 },
-                position: ["400vw","15%"],
+                position: ["255vw","15%"],
                 // distance: 200,
                 //百分比格式
                 formatter: function(data) {

@@ -2,12 +2,13 @@
   <div id="VeMap" :style="{width: '100%', height: '49.5vh'}"></div>
 </template>
 
-<script type="text/javascript" src="http://echarts.baidu.com/gallery/vendors/echarts/map/js/china.js"></script>
 <script>
 // 引入基本模板
 let echarts = require("echarts/lib/echarts");
 // 引入地图组件
-require("echarts/lib/chart/map/");
+require("echarts/lib/chart/map");
+// 引入中国地图数据
+require("echarts/map/js/china");
 export default {
   name: "VeMap",
   mounted() {
@@ -19,8 +20,9 @@ export default {
       console.log(VeMap);
       VeMap.setOption({
         title: {
-          text: "七大区域",
-          left: "center",
+          text: "销售总额\n\n124,213,213\n",
+          subtext: "环比增长\n\n+20%",
+          left: "left",
           top: 5,
           textStyle: {
             color: "#1a1b4e",
@@ -32,18 +34,20 @@ export default {
         visualMap: {
           min: 0,
           max: 1000,
-          // left: "left",
-          // top: "bottom",
+          left: "left",
+          top: "bottom",
           text: ["高", "低"],
-          calculable: true,
+          // 是否显示拖拽用的手柄，默认false
+          // calculable: false,
+          inverse: true,
           orient: "horizontal",
           inRange: {
             color: ["#e0ffff", "#006edd"]
-            // symbolSize: [30, 100]
           }
         },
         geo: {
           map: "china",
+          roam: true,  
           label: {
             normal: {
               show: true,
@@ -59,8 +63,9 @@ export default {
               areaColor: "#fbfbfb",
               borderColor: "#fff"
             },
+            // 鼠标悬停后的配置项
             emphasis: {
-              areaColor: "#3574c8"
+              areaColor: "#daa520"
             }
           }
         },
@@ -68,7 +73,7 @@ export default {
           {
             type: "map",
             mapType: "china",
-            geoIndex: 10,
+            geoIndex: 0,
             data: [
               {
                 name: "北京",

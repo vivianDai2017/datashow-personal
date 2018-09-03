@@ -8,9 +8,29 @@
       <div class="r">
         <div class="rt">
           <div class="rtl"><VeMap></VeMap></div>
-          <div class="rtr"></div>
+          <div class="rtr">
+            <div class="rtrt">
+              <div class="total">
+                <TotalData title="总用户数" number="4,213,213"></TotalData>
+              </div>
+              <div class="classify">
+                <TotalData class="classify-item" title="装锁师傅" number="3,213"></TotalData>
+                <TotalData class="classify-item" title="代理商" number="413"></TotalData>
+                <TotalData class="classify-item" title="返修率" number="0.12‰"></TotalData>
+                <TotalData class="classify-item" title="平均用户数" number="2.8"></TotalData>
+                <TotalData class="classify-item" title="平均开锁次数" number="8.4"></TotalData>
+                <TotalData class="classify-item" title="核心用户" number="2%"></TotalData>
+              </div>
+            </div>
+            <div class="rtrb">
+              <div class="rtrb-item"><VePie></VePie></div>
+              <div class="rtrb-item"></div>
+            </div>
+          </div>
         </div>
-        <div class="rb"></div>
+        <div class="rb">
+          <VeLine></VeLine>
+        </div>
       </div>
     </div>
     <!-- <DemoMap></DemoMap> -->
@@ -21,13 +41,19 @@
 // @ is an alias to /src
 import VeBar from "@/components/VeBar.vue";
 import VeMap from "@/components/VeMap.vue";
-import DemoMap from "@/components/Demo.vue";
+// import DemoMap from "@/components/Demo.vue";
+import TotalData from "@/components/TotalData.vue";
+import VePie from "@/components/VePie.vue";
+import VeLine from "@/components/VeLine.vue";
 export default {
   name: "App",
   components: {
     VeBar,
     VeMap,
-    DemoMap
+    // DemoMap
+    TotalData,
+    VePie,
+    VeLine
   }
 };
 </script>
@@ -36,6 +62,13 @@ export default {
 * {
   margin: 0;
 }
+.flexY() {
+  display: flex;
+  flex-direction: column;
+}
+.flex() {
+  display: flex;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -43,8 +76,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
-  display: flex;
-  flex-direction: column;
+  // display: flex;
+  // flex-direction: column;
+  .flexY();
 }
 .t {
   flex: 1;
@@ -52,24 +86,48 @@ export default {
 }
 .b {
   flex: 9;
-  display: flex;
+  .flex();
   .l {
     flex: 2;
   }
   .r {
     flex: 8;
-    display: flex;
-    flex-direction: column;
+    .flexY();
     .rt{
       flex: 55;
-      display: flex;
+      .flex();
       .rtl{
         flex: 40;
-        // background-color: yellow;
       }
       .rtr{
         flex: 60;
-        background-color: blue;
+        .flexY();
+        .rtrt{
+          flex: 40;
+          // background-color: red;
+          .flex();
+          .total{
+            flex: 45;
+            text-align: left;
+          }
+          .classify{
+            flex: 55;
+            .flex();
+            flex-wrap: wrap;
+            .classify-item{
+              width: 33.3333%;
+            }
+          }
+        }
+        .rtrb{
+          flex: 60;
+          // background-color: yellow;
+          .flex();
+          .rtrb-item{
+            flex: 1;
+            border-right: 1px solid red;
+          }
+        }
       }
     }
     .rb{

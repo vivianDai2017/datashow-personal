@@ -50,7 +50,8 @@ export default {
           roam: true,  
           label: {
             normal: {
-              show: true,
+              // show: true,
+              show: false,
               color: "#333"
             },
             emphasis: {

@@ -18,10 +18,22 @@ export default {
   methods: {
     drawBar() {
       let VeBar = echarts.init(document.getElementById("VeBar"));
-      let baifenbi = [0.111, 0.333, 0.444, 0.555, 0.777, 0.888, 0.922];
+      let baifenbi = [1110, 0.255, 0.333, 0.444, 0.555, 0.666, 0.777, 0.888, 0.900, 0.922];
       let grayBar = [1, 1, 1, 1, 1, 1, 1];
-      let paiming = [7, 6, 5, 4, 3, 2, 1];
-      let zongjine = [2000000, 3000000, 4000000, 5000000, 6000000, 7000000, 9123000];
+      let paiming = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
+      let zongjine = [2000, 2500, 3000, 4000, 5000, 5500, 6000, 7000, 8000, 9123];
+      let salseData = {
+        广东: 2000,
+        江苏: 2500,
+        福建: 3000,
+        湖南: 4000,
+        河南: 5000,
+        河北: 5500,
+        天津: 6000,
+        新疆: 7000,
+        云南: 8000,
+        浙江: 9123
+      };
       let fenpeijine = [
         1110000,
         20000,
@@ -38,22 +50,24 @@ export default {
         "湖南",
         "河南",
         "河北",
-        "天津"
+        "天津",
+        "新疆",
+        "云南",
+        "浙江"
       ];
       VeBar.setOption({
         title: {
           text: "销售额省份分布",
-          // left: "center",
           x: "15%",
-          // textAlign: "center"
         },
         color: ["#ddd"],
         grid: [
           {
-            top: 50,
+            top: 30,
             // width: "100%",
             bottom: 0,
             left: 10,
+            right: 20,
             containLabel: true
           }
         ],
@@ -71,12 +85,13 @@ export default {
         },
         yAxis: {
           // show: true,
+          position: "right",
           type: "category",
           axisLine: {
             show: false
           },
           axisLabel: {
-            show: false,
+            show: true,
             interval: 0,
             rotate: 0
             // 坐标轴刻度标签
@@ -88,7 +103,7 @@ export default {
           axisTick: {
             show: false
           },
-          data: city
+          data: zongjine
         },
         series: [
           //蓝条--------------------我是分割线君------------------------------//
@@ -96,13 +111,13 @@ export default {
             show: true,
             type: "bar",
             barGap: "-100%",
-            barWidth: "35%", //统计条宽度
+            barWidth: "25%", //统计条宽度
             itemStyle: {
               normal: {
                 barBorderRadius: 20 //统计条弧度
               }
             },
-            max: 1,
+            max: 10000,
             label: {
               normal: {
                 show: true,
@@ -110,17 +125,40 @@ export default {
                 textStyle: {
                   color: "#000" //百分比颜色
                 },
-                position: ["255vw","15%"],
+                position: [0,"-15vh"],
+                rich: {
+                  //富文本
+                  black: {
+                    //自定义颜色
+                    color: "#000"
+                  },
+                  green: {
+                    color: "#ddd"
+                  },
+                  yellow: {
+                    color: "#000"
+                  }
+                },
                 // distance: 200,
                 //百分比格式
                 formatter: function(data) {
                   // return (baifenbi[data.dataIndex] * 100).toFixed(1) + "%";
-                  return zongjine[data.dataIndex];
+                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";
                 }
               }
+              // show: true,
+              // positin: [0, "-100%"],
+              // // position: "right",
+              // // distance: 100,
+              // // offset: [260, -5],
+              // color: "#000",
+              // formatter: function(data) {
+              //   return zongjine[data.dataIndex];
+              // },
+              // rotate: -90
             },
             labelLine: {
-              show: false
+              show: true
             },
             z: 20,
             data: baifenbi
@@ -140,28 +178,19 @@ export default {
             // },
             label: {
               normal: {
-                show: true,
+                // show: true,
+                color: "#000",
                 //label 的position位置可以是top bottom left,right,也可以是固定值
                 //在这里需要上下统一对齐,所以用固定值
-                position: [0, "-100%"],
-                rich: {
-                  //富文本
-                  black: {
-                    //自定义颜色
-                    color: "#000"
-                  },
-                  green: {
-                    color: "#ddd"
-                  },
-                  yellow: {
-                    color: "#000"
-                  }
-                },
-                formatter: function(data) {
-                  //富文本固定格式{colorName|这里填你想要写的内容}
-                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";
-                  // return paiming[data.dataIndex] == 1 ? '{start1|}{yellow|' + paiming[data.dataIndex] + '  ' + city[data.dataIndex] + '}' + '{black|    总金额:}{yellow|' + zongjine[data.dataIndex] / 10000 + '}{black|万元,已分配金额:}' + '{green|' + fenpeijine[data.dataIndex] / 10000 + '万元}' : ' {start2|}{black|' + paiming[data.dataIndex] + '  ' + city[data.dataIndex] + '}' + '{black|总金额:}{yellow|' + zongjine[data.dataIndex] / 10000 + '}{black|万元,已分配金额:}' + '{green|' + fenpeijine[data.dataIndex] / 10000 + '万元}';
-                }
+                // position: ["100%", 0],
+                position: "right",
+                align: "left",
+                // formatter: function(data) {
+                //   //富文本固定格式{colorName|这里填你想要写的内容}
+                //   // return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";//
+                //   return zongjine[data.dataIndex];
+                //   // return paiming[data.dataIndex] == 1 ? '{start1|}{yellow|' + paiming[data.dataIndex] + '  ' + city[data.dataIndex] + '}' + '{black|    总金额:}{yellow|' + zongjine[data.dataIndex] / 10000 + '}{black|万元,已分配金额:}' + '{green|' + fenpeijine[data.dataIndex] / 10000 + '万元}' : ' {start2|}{black|' + paiming[data.dataIndex] + '  ' + city[data.dataIndex] + '}' + '{black|总金额:}{yellow|' + zongjine[data.dataIndex] / 10000 + '}{black|万元,已分配金额:}' + '{green|' + fenpeijine[data.dataIndex] / 10000 + '万元}';
+                // }
               }
             },
             data: zongjine

@@ -29,7 +29,13 @@
           </div>
         </div>
         <div class="rb">
+          <!-- <div class="test"><VeLine class="test1" :title="月销量"></VeLine></div> -->
+          <!-- <div class="test"><VeLine class="test2" :title="每日注册用户数"></VeLine></div> -->
+          
           <VeLine></VeLine>
+          <!-- <VeLine></VeLine> -->
+          <!-- <VeLine></VeLine> -->
+          <!-- <VeLine></VeLine> -->
         </div>
       </div>
     </div>
@@ -89,6 +95,7 @@ export default {
   .flex();
   .l {
     flex: 2;
+    border-right: 1px solid red;
   }
   .r {
     flex: 8;
@@ -98,6 +105,7 @@ export default {
       .flex();
       .rtl{
         flex: 40;
+        border-right: 1px solid red;
       }
       .rtr{
         flex: 60;
@@ -132,7 +140,12 @@ export default {
     }
     .rb{
       flex: 45;
-      background-color: green;
+      // background-color: green;
+      .flex();
+      flex-wrap: wrap;
+      .test{
+        width: 50%;
+      }
     }
   }
 }

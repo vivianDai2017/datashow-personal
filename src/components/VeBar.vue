@@ -18,8 +18,8 @@ export default {
   methods: {
     drawBar() {
       let VeBar = echarts.init(document.getElementById("VeBar"));
-      let baifenbi = [1110, 0.255, 0.333, 0.444, 0.555, 0.666, 0.777, 0.888, 0.900, 0.922];
-      let grayBar = [1, 1, 1, 1, 1, 1, 1];
+      // let baifenbi = [1110, 0.255, 0.333, 0.444, 0.555, 0.666, 0.777, 0.888, 0.900, 0.922];
+      // let grayBar = [1, 1, 1, 1, 1, 1, 1];
       let paiming = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
       let zongjine = [2000, 2500, 3000, 4000, 5000, 5500, 6000, 7000, 8000, 9123];
       let salseData = {
@@ -117,7 +117,6 @@ export default {
                 barBorderRadius: 20 //统计条弧度
               }
             },
-            max: 10000,
             label: {
               normal: {
                 show: true,
@@ -139,29 +138,19 @@ export default {
                     color: "#000"
                   }
                 },
-                // distance: 200,
+                // distance: 200,  //
                 //百分比格式
                 formatter: function(data) {
                   // return (baifenbi[data.dataIndex] * 100).toFixed(1) + "%";
-                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";
+                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";//
                 }
               }
-              // show: true,
-              // positin: [0, "-100%"],
-              // // position: "right",
-              // // distance: 100,
-              // // offset: [260, -5],
-              // color: "#000",
-              // formatter: function(data) {
-              //   return zongjine[data.dataIndex];
-              // },
-              // rotate: -90
             },
             labelLine: {
               show: true
             },
             z: 20,
-            data: baifenbi
+            data: zongjine
           },
           //数据条--------------------我是分割线君------------------------------//
           {
@@ -180,9 +169,6 @@ export default {
               normal: {
                 // show: true,
                 color: "#000",
-                //label 的position位置可以是top bottom left,right,也可以是固定值
-                //在这里需要上下统一对齐,所以用固定值
-                // position: ["100%", 0],
                 position: "right",
                 align: "left",
                 // formatter: function(data) {

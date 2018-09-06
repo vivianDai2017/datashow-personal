@@ -16,6 +16,282 @@ export default {
   },
   methods: {
     drawMap() {
+      // let provinces =  [
+      //   {
+      //     name: "北京",
+      //     value: 231
+      //   },
+      //   {
+      //     name: "天津",
+      //     value: 999
+      //   },
+      //   {
+      //     name: "上海",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "重庆",
+      //     value: 100
+      //   },
+      //   {
+      //     name: "河北",
+      //     value: 520
+      //   },
+      //   {
+      //     name: "河南",
+      //     value: 90
+      //   },
+      //   {
+      //     name: "云南",
+      //     value: 800
+      //   },
+      //   {
+      //     name: "辽宁",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "黑龙江",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "湖南",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "安徽",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "山东",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "新疆",
+      //     value: 0
+      //   },
+      //   {
+      //     name: "江苏",
+      //     value: 600
+      //   },
+      //   {
+      //     name: "浙江",
+      //     value: 200
+      //   },
+      //   {
+      //     name: "江西",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "湖北",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "广西",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "甘肃",
+      //     value: 180
+      //   },
+      //   {
+      //     name: "山西",
+      //     value: 900
+      //   },
+      //   {
+      //     name: "内蒙古",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "陕西",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "吉林",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "福建",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "贵州",
+      //     value: 700
+      //   },
+      //   {
+      //     name: "广东",
+      //     value: 999
+      //   },
+      //   {
+      //     name: "青海",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "西藏",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "四川",
+      //     value: 300
+      //   },
+      //   {
+      //     name: "宁夏",
+      //     value: 100
+      //   },
+      //   {
+      //     name: "海南",
+      //     value: 900
+      //   },
+      //   {
+      //     name: "台湾",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "香港",
+      //     value: 10
+      //   },
+      //   {
+      //     name: "澳门",
+      //     value: 10
+      //   }
+      // ];
+      let provinces =  [
+        {
+          name: "北京",
+          value: 231
+        },
+        {
+          name: "天津",
+          value: 999
+        },
+        {
+          name: "上海",
+          value: 10
+        },
+        {
+          name: "重庆",
+          value: 100
+        },
+        {
+          name: "河北",
+          value: 520
+        },
+        {
+          name: "河南",
+          value: 90
+        },
+        {
+          name: "云南",
+          value: 800
+        },
+        {
+          name: "辽宁",
+          value: 10
+        },
+        {
+          name: "黑龙江",
+          value: 10
+        },
+        {
+          name: "湖南",
+          value: 10
+        },
+        {
+          name: "安徽",
+          value: 10
+        },
+        {
+          name: "山东",
+          value: 10
+        },
+        {
+          name: "新疆",
+          value: 0
+        },
+        {
+          name: "江苏",
+          value: 600
+        },
+        {
+          name: "浙江",
+          value: 200
+        },
+        {
+          name: "江西",
+          value: 10
+        },
+        {
+          name: "湖北",
+          value: 10
+        },
+        {
+          name: "广西",
+          value: 10
+        },
+        {
+          name: "甘肃",
+          value: 180
+        },
+        {
+          name: "山西",
+          value: 900
+        },
+        {
+          name: "内蒙古",
+          value: 10
+        },
+        {
+          name: "陕西",
+          value: 10
+        },
+        {
+          name: "吉林",
+          value: 10
+        },
+        {
+          name: "福建",
+          value: 10
+        },
+        {
+          name: "贵州",
+          value: 700
+        },
+        {
+          name: "广东",
+          value: 999
+        },
+        {
+          name: "青海",
+          value: 10
+        },
+        {
+          name: "西藏",
+          value: 10
+        },
+        {
+          name: "四川",
+          value: 300
+        },
+        {
+          name: "宁夏",
+          value: 100
+        },
+        {
+          name: "海南",
+          value: 900
+        },
+        {
+          name: "台湾",
+          value: 10
+        },
+        {
+          name: "香港",
+          value: 10
+        },
+        {
+          name: "澳门",
+          value: 10
+        }
+      ];
       let VeMap = echarts.init(document.getElementById("VeMap"));
       console.log(VeMap);
       VeMap.setOption({
@@ -75,142 +351,26 @@ export default {
             type: "map",
             mapType: "china",
             geoIndex: 0,
+            data: provinces
+          },
+          {
+            name: "地点",
+            type: "effectScatter",
+            coordinateSystem: "geo",
+            showEffectOn: 'render',
+            // rippleEffect: {
+
+            // }
             data: [
               {
-                name: "北京",
-                value: 231
-              },
-              {
-                name: "天津",
-                value: 999
-              },
-              {
-                name: "上海",
-                value: 10
-              },
-              {
-                name: "重庆",
-                value: 100
-              },
-              {
-                name: "河北",
-                value: 520
-              },
-              {
-                name: "河南",
-                value: 90
-              },
-              {
-                name: "云南",
-                value: 800
-              },
-              {
-                name: "辽宁",
-                value: 10
-              },
-              {
-                name: "黑龙江",
-                value: 10
-              },
-              {
-                name: "湖南",
-                value: 10
-              },
-              {
-                name: "安徽",
-                value: 10
-              },
-              {
-                name: "山东",
-                value: 10
-              },
-              {
-                name: "新疆",
-                value: 0
-              },
-              {
-                name: "江苏",
-                value: 600
-              },
-              {
-                name: "浙江",
-                value: 200
-              },
-              {
-                name: "江西",
-                value: 10
-              },
-              {
-                name: "湖北",
-                value: 10
-              },
-              {
-                name: "广西",
-                value: 10
-              },
-              {
-                name: "甘肃",
-                value: 180
-              },
-              {
-                name: "山西",
-                value: 900
-              },
-              {
-                name: "内蒙古",
-                value: 10
-              },
-              {
-                name: "陕西",
-                value: 10
-              },
-              {
-                name: "吉林",
-                value: 10
-              },
-              {
-                name: "福建",
-                value: 10
-              },
-              {
-                name: "贵州",
-                value: 700
-              },
-              {
-                name: "广东",
-                value: 999
-              },
-              {
-                name: "青海",
-                value: 10
-              },
-              {
-                name: "西藏",
-                value: 10
-              },
-              {
-                name: "四川",
-                value: 300
-              },
-              {
-                name: "宁夏",
-                value: 100
-              },
-              {
-                name: "海南",
-                value: 900
-              },
-              {
-                name: "台湾",
-                value: 10
-              },
-              {
-                name: "香港",
-                value: 10
-              },
-              {
-                name: "澳门",
-                value: 10
+                name: "昆山",
+                value: [120.980737,31.385598,4],
+                symbolSize: 20,
+                itemStyle: {
+                  normal: {
+                    color: "red"
+                  }
+                }
               }
             ]
           }

@@ -37,7 +37,7 @@ export default {
             name: "家庭组成",
             type: "pie",
             radius: "50%",
-            center: ["40%", "50%"],
+            center: ["45%", "50%"],
             data: [
               {
                 name: "三代同堂: 30%",
@@ -52,7 +52,7 @@ export default {
                 value: 20
               },
               {
-                name: "其他 10%",
+                name: "其他: 10%",
                 value: 10
               }
             ]

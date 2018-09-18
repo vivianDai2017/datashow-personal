@@ -22,36 +22,41 @@ export default {
   // },
   data() {
     return {
-      // localText: this.title
       items: [
         {
           lineId: "VeLine1",
-          title: "月销量",
-          data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
+          title: "每日服务人次",
+          color: "#68d3ff",
+          data: [120, 132, 178, 180, 190, 100, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         },
         {
           lineId: "VeLine2",
-          title: "每日注册用户数",
+          title: "官网PV",
+          color: "#68d3ff",
           data: [0, 832, 801, 234, 2290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         },
         {
           lineId: "VeLine3",
-          title: "月产能",
+          title: "每日注册用户量",
+          color: "#68d3ff",
           data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         },
         {
           lineId: "VeLine4",
-          title: "每日活跃用户数",
+          title: "设备绑定总数",
+          color: "#68d3ff",
           data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         },
         {
           lineId: "VeLine5",
-          title: "官网PV",
+          title: "每日活跃用户",
+          color: "#68d3ff",
           data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         },
         {
           lineId: "VeLine6",
-          title: "每日绑定设备数",
+          title: "每日绑定设备",
+          color: "yellow",
           data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
         }
       ]
@@ -61,7 +66,7 @@ export default {
     this.drawLineAll();
   },
   methods: {
-    drawLine(lineId, title, data) {
+    drawLine(lineId, title, color, data) {
       console.log("划线");
       console.log(lineId);
       console.log(title);
@@ -69,7 +74,6 @@ export default {
       let option = {
         title: {
           text: title,
-          // text: "月销量",
           textStyle: {
             fontSize: 16
           }
@@ -107,11 +111,10 @@ export default {
             //   borderType: "dotted"
             // },
             lineStyle: {
-              color: "#000",
+              color: color,
               width: 1
             },
             data: data
-            // data: [20, 932, 901, 934, 1290, 1330, 1320, 456, 778, 1600, 230, 748, 110, 900, 800, 90, 230, 450, 667, 120, 231, 342, 893, 884, 345, 346, 787, 448, 909, 810, 711]
           }
         ]
       };
@@ -119,7 +122,7 @@ export default {
     },
     drawLineAll() {
       for(let i = 0; i < this.items.length; i++){
-        this.drawLine(this.items[i].lineId, this.items[i].title, this.items[i].data);
+        this.drawLine(this.items[i].lineId, this.items[i].title, this.items[i].color, this.items[i].data);
       }
     }
   }

@@ -11,7 +11,7 @@ require("echarts/lib/chart/bar");
 // 引入title组件
 require("echarts/lib/component/title");
 export default {
-  name: "VeBar",
+  name: "VeBarTwo",
   mounted() {
     this.drawBar();
   },
@@ -20,43 +20,12 @@ export default {
       let VeBar = echarts.init(document.getElementById("VeBar"));
       let paiming = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
       let zongjine = [2000, 2500, 3000, 4000, 5000, 5500, 6000, 7000, 8000, 9123];
-      let salseData = {
-        广东: 2000,
-        江苏: 2500,
-        福建: 3000,
-        湖南: 4000,
-        河南: 5000,
-        河北: 5500,
-        天津: 6000,
-        新疆: 7000,
-        云南: 8000,
-        浙江: 9123
-      };
-      let fenpeijine = [
-        1110000,
-        20000,
-        30000,
-        40000,
-        50000,
-        60000,
-        70000
-      ];
-      let city = [
-        "广东",
-        "江苏",
-        "福建",
-        "湖南",
-        "河南",
-        "河北",
-        "天津",
-        "新疆",
-        "云南",
-        "浙江"
-      ];
+      let fenpeijine = [1110000, 20000, 30000, 40000, 50000, 60000, 70000];
+      let city = ["广东", "江苏", "福建", "湖南", "河南", "河北", "天津", "新疆", "云南", "浙江"];
       VeBar.setOption({
         title: {
-          text: "销售额省份分布",
-          x: "15%",
+          text: "设备省份分布",
+          x: "1%",
         },
         color: ["#ddd"],
         grid: [
@@ -111,9 +80,14 @@ export default {
             barGap: "-100%",
             barWidth: "25%", //统计条宽度
             itemStyle: {
-              normal: {
-                barBorderRadius: 20 //统计条弧度
-              }
+             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                        offset: 0,
+                        color: '#508DFF'         //0%处的颜色
+                    }, 
+                    {
+                        offset: 1,
+                        color: '#26C5FE'        //100%处的颜色
+                    }])
             },
             label: {
               normal: {

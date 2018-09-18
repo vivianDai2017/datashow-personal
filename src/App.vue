@@ -1,13 +1,16 @@
 <template>
   <div id="app">
-    <div class="t">云巢数据</div>
+    <div class="t">云巢智能综合大数据平台</div>
     <div class="b">
       <div class="l">
-        <VeBar></VeBar>
+        <!-- <VeBar></VeBar> -->
+        <!-- <VeBarOne></VeBarOne> -->
+        <VeBarTwo></VeBarTwo>
       </div>
       <div class="r">
         <div class="rt">
-          <div class="rtl"><VeMap></VeMap></div>
+          <!-- <div class="rtl"><VeMap></VeMap></div> -->
+          <div class="rtl"><VeMapOne></VeMapOne></div>
           <div class="rtr">
             <div class="rtrt">
               <div class="total">
@@ -28,38 +31,37 @@
             </div>
           </div>
         </div>
-        <div class="rb">
-          <!-- <div class="test"><VeLine class="test1" :title="月销量"></VeLine></div> -->
-          <!-- <div class="test"><VeLine class="test2" :title="每日注册用户数"></VeLine></div> -->
-          
+        <div class="rb">          
           <VeLine></VeLine>
-          <!-- <VeLine></VeLine> -->
-          <!-- <VeLine></VeLine> -->
-          <!-- <VeLine></VeLine> -->
         </div>
       </div>
     </div>
-    <!-- <DemoMap></DemoMap> -->
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
 import VeBar from "@/components/VeBar.vue";
-import VeMap from "@/components/VeMap.vue";
-// import DemoMap from "@/components/Demo.vue";
+// import VeMap from "@/components/VeMap.vue";
 import TotalData from "@/components/TotalData.vue";
 import VePie from "@/components/VePie.vue";
 import VeLine from "@/components/VeLine.vue";
+import VeBarOne from "@/components/VeBarOne.vue";
+import VeBarTwo from "@/components/VeBarTwo.vue";
+import VeMapOne from "@/components/VeMapOne.vue";
+// 引入iconfont
+import "./assets/iconfont/iconfont.css";
 export default {
   name: "App",
   components: {
     VeBar,
-    VeMap,
-    // DemoMap
+    // VeMap,
     TotalData,
     VePie,
-    VeLine
+    VeLine,
+    VeBarOne,
+    VeBarTwo,
+    VeMapOne
   }
 };
 </script>

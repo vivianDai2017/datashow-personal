@@ -1,7 +1,10 @@
 <template>
   <div>
     <div>{{title}}</div>
-    <div>{{number}}</div>
+    <div>
+      {{number}}
+      <span><i class="iconfont icon-web-icon-1"></i></span>      
+    </div>
   </div>
 </template>
 

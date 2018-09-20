@@ -1,11 +1,14 @@
 <template>
   <div id="app">
-    <div class="t">云巢智能综合大数据平台</div>
+    <div class="t">
+      <VeTop></VeTop>
+    </div>
     <div class="b">
       <div class="l">
         <!-- <VeBar></VeBar> -->
         <!-- <VeBarOne></VeBarOne> -->
         <VeBarTwo></VeBarTwo>
+        <img class="VeBarGif" src="./assets/image/right_01.gif" alt="">
       </div>
       <div class="r">
         <div class="rt">
@@ -13,17 +16,7 @@
           <div class="rtl"><VeMapOne></VeMapOne></div>
           <div class="rtr">
             <div class="rtrt">
-              <div class="total">
-                <TotalData title="总用户数" number="4,213,213"></TotalData>
-              </div>
-              <div class="classify">
-                <TotalData class="classify-item" title="装锁师傅" number="3,213"></TotalData>
-                <TotalData class="classify-item" title="代理商" number="413"></TotalData>
-                <TotalData class="classify-item" title="返修率" number="0.12‰"></TotalData>
-                <TotalData class="classify-item" title="平均用户数" number="2.8"></TotalData>
-                <TotalData class="classify-item" title="平均开锁次数" number="8.4"></TotalData>
-                <TotalData class="classify-item" title="核心用户" number="2%"></TotalData>
-              </div>
+              <DataCollection></DataCollection>
             </div>
             <div class="rtrb">
               <div class="rtrb-item"><VePie></VePie></div>
@@ -41,9 +34,11 @@
 
 <script>
 // @ is an alias to /src
+import VeTop from "@/components/VeTop.vue";
 import VeBar from "@/components/VeBar.vue";
 // import VeMap from "@/components/VeMap.vue";
 import TotalData from "@/components/TotalData.vue";
+import DataCollection from "@/components/DataCollection.vue";
 import VePie from "@/components/VePie.vue";
 import VeLine from "@/components/VeLine.vue";
 import VeBarOne from "@/components/VeBarOne.vue";
@@ -54,9 +49,10 @@ import "./assets/iconfont/iconfont.css";
 export default {
   name: "App",
   components: {
+    VeTop,
     VeBar,
-    // VeMap,
-    TotalData,
+    // TotalData,
+    DataCollection,
     VePie,
     VeLine,
     VeBarOne,
@@ -67,6 +63,7 @@ export default {
 </script>
 
 <style lang="less">
+@baseColor: #59ebe8;
 * {
   margin: 0;
 }
@@ -84,54 +81,59 @@ export default {
   text-align: center;
   color: #2c3e50;
   height: 100vh;
-  // display: flex;
-  // flex-direction: column;
   .flexY();
+  padding: 2.78vh 2.604vw 3.241vh 2.40vw;
 }
 .t {
-  flex: 1;
-  font-size: 6vh;
+  flex: 88;
+  font-size: 3vh;
 }
 .b {
-  flex: 9;
+  flex: 912;
   .flex();
+  justify-content: space-between;
   .l {
-    flex: 2;
-    border-right: 1px solid red;
+    // flex: 2;
+    width: 16.094vw;
+    height: 84.630vh;
+    background-color: #000;
+    position: relative;
+    .VeBarGif{
+      width: 11.302vw;
+      height: 15.833vh;
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
   }
   .r {
-    flex: 8;
+    // flex: 8;
+    width: 76.667vw;
     .flexY();
     .rt{
-      flex: 55;
+      // flex: 55;
+      height: 47.5vh;
+      background-color: #000;
       .flex();
       .rtl{
-        flex: 40;
-        border-right: 1px solid red;
+        // flex: 40;
+        width: 38.480vw;
       }
       .rtr{
-        flex: 60;
+        // flex: 60;
+        width: 38.177vw;
         .flexY();
         .rtrt{
-          flex: 40;
-          // background-color: red;
-          .flex();
-          .total{
-            flex: 45;
-            text-align: left;
-          }
-          .classify{
-            flex: 55;
-            .flex();
-            flex-wrap: wrap;
-            .classify-item{
-              width: 33.3333%;
-            }
-          }
+          // flex: 40;
+          height: 17.778vh;
+          margin-bottom: 1.481vh;
         }
         .rtrb{
-          flex: 60;
-          // background-color: yellow;
+          // flex: 60;
+          height: 26.852vh;
+          background-image: url("./assets/image/box_right2.png");
+          background-size: 100% 100%;
+          margin-bottom: 1.667vh;
           .flex();
           .rtrb-item{
             flex: 1;
@@ -141,8 +143,8 @@ export default {
       }
     }
     .rb{
-      flex: 45;
-      // background-color: green;
+      // flex: 45;
+      height: 37.963vh;
       .flex();
       flex-wrap: wrap;
       .test{

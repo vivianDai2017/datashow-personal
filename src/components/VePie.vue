@@ -13,28 +13,28 @@ export default {
     return {
       components: [
         {
-                name: "标准家庭: 28%",
+                name: "标准家庭: \n\n28%",
                 value: 28
               },
               {
-                name: "独居: 10%",
+                name: "独居: \n\n10%",
                 value: 10
               },
               {
-                name: "租户: 48%",
+                name: "租户: \n\n48%",
                 value: 48
               },
               {
-                name: "夫妇: 6%",
+                name: "夫妇: \n\n6%",
                 value: 6
               },
               {
-                name: "三代同堂: 5%",
-                value: 5
+                name: "其他: \n\n3%",
+                value: 3
               },
               {
-                name: "其他: 3%",
-                value: 3
+                name: "三代同堂: \n\n5%",
+                value: 5
               }
       ]
     }
@@ -58,28 +58,40 @@ export default {
   methods: {
     drawPie: function(index){
       let that = this;
-      console.log("画饼");
-      console.log(index);
+      // console.log("画饼");
+      // console.log(index);
       let VePie = echarts.init(document.getElementById("VePie"));
       let option = {
         title: {
-          text: "家庭画像"
+          text: "家庭画像",
+          top: "1%",
+          left: "6%",
+          textStyle: {
+            color: "#59ebe8",
+            fontFamily: "SourceHanSansCN-Normal",
+            fontWeight: "normal",
+            fontSize: "110%"
+          }
         },
         legend: {
           orient: "vertical",
-          left: "left",
+          left: "8%",
           top: "35%",
           itemGap: 5,
+          textStyle: {
+            color: "#59ebe8",
+          },
           formatter: function(name){
             return name.split(":")[0]
           }
         },
+        color: ["#ff9555", "#b289d9", "#02feff", "#2294f2", "#06d627", "#f24752"],
         series: [
           {
             name: "家庭组成",
             type: "pie",
-            radius: ["55%","75%"],
-            center: ["55%", "50%"],
+            radius: ["45%","65%"],
+            center: ["65%", "50%"],
             avoidLabelOverlap: false,
             label: {
               normal: {

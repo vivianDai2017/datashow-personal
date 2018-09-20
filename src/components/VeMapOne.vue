@@ -213,6 +213,10 @@ export default {
         {
           name: "澳门",
           value: 10
+        },
+        {
+          name: "南海诸岛",
+          value: 0
         }
       ];
       let VeMap = echarts.init(document.getElementById("VeMap"));
@@ -220,29 +224,52 @@ export default {
       VeMap.setOption({
         // backgroundColor: "#000",
         title: {
-          text: "销售总额\n\n124,213,213\n",
-          subtext: "环比增长\n\n+20%",
+          // text: "服务人次\n\n124,213,213\n",
+          text: "{a|服务人次\n}" + "{b|124,213,213}",
+          subtext: "{c|环比增长\n}{d|+20%}",
           left: "left",
           top: 5,
           textStyle: {
-            color: "#1a1b4e",
-            fontStyle: "normal",
-            fontWeight: "bold",
-            fontSize: 20
+            rich: {
+              a: {
+                color: "#59ebe8",
+                fontSize: 18
+              },
+              b: {
+                color: "#fff",
+                // fontSize: "4.63vh",
+                fontSize: 24,
+                fontFamily: "SourceHanSansCN-Medium",
+                lineHeight: 28
+              }
+            }
+          },
+          subtextStyle: {
+            lineHeight: 16,
+            rich: {
+              c: {
+                color:"#fff",
+              },
+              d: {
+                color: "#f00202",
+              }
+            }
           }
         },
         visualMap: {
+          type: "continuous",
           min: 0,
           max: 1000,
           left: "left",
-          top: "bottom",
+          bottom: "10%",
           text: ["高", "低"],
+          itemWidth: 12,
           // 是否显示拖拽用的手柄，默认false
           // calculable: false,
           inverse: true,
           orient: "horizontal",
           inRange: {
-            color: ["#e0ffff", "#006edd"]
+            color: ["#32a6ff", "#21697b"]
           }
         },
         geo: {
@@ -250,7 +277,7 @@ export default {
           roam: true,  
           label: {
             normal: {
-              show: true,
+              // show: true,
               // show: false,
               color: "#000"
             },
@@ -291,22 +318,6 @@ export default {
             itemStyle: {
                 normal: {
                     color: "green",
-                    // color: {
-                    //   type: "radial",
-                    //   x: 0.5,
-                    //   y: 0.5,
-                    //   r: 0.5,
-                    //   colorStops: [
-                    //     {
-                    //       offset: 0,
-                    //       color: "red"
-                    //     },
-                    //     {
-                    //       offset: 1,
-                    //       color: "blue"
-                    //     }
-                    //   ]
-                    // },
                     shadowBlur: 5,
                     shadowColor: "red"
                 }
@@ -321,3 +332,10 @@ export default {
   }
 }
 </script>
+
+<style>
+  #VeMap{
+    background-color: #000;
+  }
+</style>
+

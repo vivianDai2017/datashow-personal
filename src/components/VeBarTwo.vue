@@ -1,5 +1,7 @@
 <template>
-  <div id="VeBar" :style="{width: '100%', height: '90vh'}"></div>
+  <div id="VeBar" :style="{width: '100%', height: '84.630vh'}">
+    <img class="VeBarGif" src="../assets/image/right_01.gif" alt="">
+  </div>
 </template>
 
 <script>
@@ -25,15 +27,20 @@ export default {
       VeBar.setOption({
         title: {
           text: "设备省份分布",
-          x: "1%",
+          left: "7.77%",
+          top: "2.19%",
+          textStyle: {
+            color: "#59ebe8",
+            fontFamily: "SourceHanSansCN-Normal",
+            fontWeight: "normal"
+          }
         },
         color: ["#ddd"],
         grid: [
           {
-            top: 30,
-            // width: "100%",
+            top: 60,
             bottom: 0,
-            left: 10,
+            left: "7.77%",
             right: 20,
             containLabel: true
           }
@@ -60,7 +67,8 @@ export default {
           axisLabel: {
             show: true,
             interval: 0,
-            rotate: 0
+            rotate: 0,
+            color: "#fff"
             // 坐标轴刻度标签
             // inside: false,
           },
@@ -82,11 +90,11 @@ export default {
             itemStyle: {
              color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
                         offset: 0,
-                        color: '#508DFF'         //0%处的颜色
+                        color: '#093762'         //0%处的颜色
                     }, 
                     {
                         offset: 1,
-                        color: '#26C5FE'        //100%处的颜色
+                        color: '#00ffcc'        //100%处的颜色
                     }])
             },
             label: {
@@ -94,27 +102,27 @@ export default {
                 show: true,
                 stack: "zongjine",
                 textStyle: {
-                  color: "#000" //百分比颜色
+                  color: "red" //百分比颜色
                 },
                 position: [0,"-15vh"],
                 rich: {
                   //富文本
-                  black: {
+                  write: {
                     //自定义颜色
-                    color: "#000"
+                    color: "#fff"
                   },
-                  green: {
-                    color: "#ddd"
-                  },
-                  yellow: {
-                    color: "#000"
-                  }
+                  // green: {
+                  //   color: "#ddd"
+                  // },
+                  // yellow: {
+                  //   color: "#000"
+                  // }
                 },
                 // distance: 200,  //
                 //百分比格式
                 formatter: function(data) {
                   // return (baifenbi[data.dataIndex] * 100).toFixed(1) + "%";
-                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";//
+                  return "{write|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";
                 }
               }
             },
@@ -139,8 +147,7 @@ export default {
             // },
             label: {
               normal: {
-                // show: true,
-                color: "#000",
+                // color: "#000",
                 position: "right",
                 align: "left",
                 // formatter: function(data) {
@@ -162,4 +169,12 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  #VeBar{
+    background-image: url("../assets/image/box_left.png");
+    background-size: 100% 100%;
+    .VeBarGif{
+      width: 11.302vw;
+      height: 15.833vh;
+    }
+  }
 </style>

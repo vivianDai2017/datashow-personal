@@ -1,5 +1,5 @@
 <template>
-  <div id="VeBar" :style="{width: '100%', height: '90vh'}"></div>
+  <div id="VeBar" :style="{width: '100%', height: '84.630vh'}"></div>
 </template>
 
 <script>
@@ -20,51 +20,25 @@ export default {
       let VeBar = echarts.init(document.getElementById("VeBar"));
       let paiming = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1];
       let zongjine = [2000, 2500, 3000, 4000, 5000, 5500, 6000, 7000, 8000, 9123];
-      let salseData = {
-        广东: 2000,
-        江苏: 2500,
-        福建: 3000,
-        湖南: 4000,
-        河南: 5000,
-        河北: 5500,
-        天津: 6000,
-        新疆: 7000,
-        云南: 8000,
-        浙江: 9123
-      };
-      let fenpeijine = [
-        1110000,
-        20000,
-        30000,
-        40000,
-        50000,
-        60000,
-        70000
-      ];
-      let city = [
-        "广东",
-        "江苏",
-        "福建",
-        "湖南",
-        "河南",
-        "河北",
-        "天津",
-        "新疆",
-        "云南",
-        "浙江"
-      ];
+      let fenpeijine = [1110000, 20000, 30000, 40000, 50000, 60000, 70000];
+      let city = ["广东", "江苏", "福建", "湖南", "河南", "河北", "天津", "新疆", "云南", "浙江"];
       VeBar.setOption({
         title: {
-          text: "销售额省份分布",
-          x: "15%",
+          text: "设备省份分布",
+          left: "7.77%",
+          top: "2.19%",
+          textStyle: {
+            color: "#59ebe8",
+            fontFamily: "SourceHanSansCN-Normal",
+            fontWeight: "normal"
+          }
         },
         color: ["#ddd"],
         grid: [
           {
-            top: 30,
-            // width: "100%",
+            top: 60,
             bottom: 0,
-            left: 10,
+            left: "7.77%",
             right: 20,
             containLabel: true
           }
@@ -91,7 +65,8 @@ export default {
           axisLabel: {
             show: true,
             interval: 0,
-            rotate: 0
+            rotate: 0,
+            color: "#fff"
             // 坐标轴刻度标签
             // inside: false,
           },
@@ -111,36 +86,41 @@ export default {
             barGap: "-100%",
             barWidth: "25%", //统计条宽度
             itemStyle: {
-              normal: {
-                barBorderRadius: 20 //统计条弧度
-              }
+             color: new echarts.graphic.LinearGradient(0, 0, 1, 0, [{ //颜色渐变函数 前四个参数分别表示四个位置依次为左、下、右、上
+                        offset: 0,
+                        color: '#093762'         //0%处的颜色
+                    }, 
+                    {
+                        offset: 1,
+                        color: '#00ffcc'        //100%处的颜色
+                    }])
             },
             label: {
               normal: {
                 show: true,
                 stack: "zongjine",
                 textStyle: {
-                  color: "#000" //百分比颜色
+                  color: "red" //百分比颜色
                 },
                 position: [0,"-15vh"],
                 rich: {
                   //富文本
-                  black: {
+                  write: {
                     //自定义颜色
-                    color: "#000"
+                    color: "#fff"
                   },
-                  green: {
-                    color: "#ddd"
-                  },
-                  yellow: {
-                    color: "#000"
-                  }
+                  // green: {
+                  //   color: "#ddd"
+                  // },
+                  // yellow: {
+                  //   color: "#000"
+                  // }
                 },
                 // distance: 200,  //
                 //百分比格式
                 formatter: function(data) {
                   // return (baifenbi[data.dataIndex] * 100).toFixed(1) + "%";
-                  return "{yellow|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";//
+                  return "{write|" + "NO." + paiming[data.dataIndex] + "  " + city[data.dataIndex] + "}";
                 }
               }
             },
@@ -165,8 +145,7 @@ export default {
             // },
             label: {
               normal: {
-                // show: true,
-                color: "#000",
+                // color: "#000",
                 position: "right",
                 align: "left",
                 // formatter: function(data) {
@@ -188,4 +167,8 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="less">
+  #VeBar{
+    background-image: url("../assets/image/box_left.png");
+    background-size: 100% 100%;
+  }
 </style>

@@ -50,7 +50,6 @@ export default {
       indexTmp > 5 && (indexTmp = 0);
       console.log("indexTmp",indexTmp);
       that.drawPie(indexTmp);
-      // time === 5 && clearInterval(timer);
     },3000);
     
     
@@ -58,19 +57,17 @@ export default {
   methods: {
     drawPie: function(index){
       let that = this;
-      // console.log("画饼");
-      // console.log(index);
       let VePie = echarts.init(document.getElementById("VePie"));
       let option = {
         title: {
           text: "家庭画像",
-          top: "1%",
+          top: "2%",
           left: "6%",
           textStyle: {
             color: "#59ebe8",
             fontFamily: "SourceHanSansCN-Normal",
             fontWeight: "normal",
-            fontSize: "110%"
+            fontSize: "127%"
           }
         },
         legend: {

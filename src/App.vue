@@ -5,16 +5,13 @@
     </div>
     <div class="b">
       <div class="l">
-        <!-- <VeBar></VeBar> -->
-        <!-- <VeBarOne></VeBarOne> -->
-        <VeBarTwo></VeBarTwo>
+        <VeBar></VeBar>
         <img class="VeBarGif rTop" src="./assets/image/right_01.gif" alt="">
         <img class="VeBarGif lBtm" src="./assets/image/right_01.gif" alt="">
       </div>
       <div class="r">
         <div class="rt">
-          <!-- <div class="rtl"><VeMap></VeMap></div> -->
-          <div class="rtl"><VeMapOne></VeMapOne></div>
+          <div class="rtl"><VeMap></VeMap></div>
           <div class="rtr">
             <div class="rtrt">
               <DataCollection></DataCollection>
@@ -39,14 +36,11 @@
 // @ is an alias to /src
 import VeTop from "@/components/VeTop.vue";
 import VeBar from "@/components/VeBar.vue";
-// import VeMap from "@/components/VeMap.vue";
+import VeMap from "@/components/VeMap.vue";
 import TotalData from "@/components/TotalData.vue";
 import DataCollection from "@/components/DataCollection.vue";
 import VePie from "@/components/VePie.vue";
 import VeLine from "@/components/VeLine.vue";
-import VeBarOne from "@/components/VeBarOne.vue";
-import VeBarTwo from "@/components/VeBarTwo.vue";
-import VeMapOne from "@/components/VeMapOne.vue";
 import UsersPortrait from "@/components/UsersPortrait.vue"
 // 引入iconfont
 import "./assets/iconfont/iconfont.css";
@@ -55,13 +49,10 @@ export default {
   components: {
     VeTop,
     VeBar,
-    // TotalData,
+    VeMap,
     DataCollection,
     VePie,
     VeLine,
-    VeBarOne,
-    VeBarTwo,
-    VeMapOne,
     UsersPortrait
   }
 };
@@ -165,14 +156,4 @@ export default {
     }
   }
 }
-// #nav {
-//   padding: 30px;
-//   a {
-//     font-weight: bold;
-//     color: #2c3e50;
-//     &.router-link-exact-active {
-//       color: #42b983;
-//     }
-//   }
-// }
 </style>

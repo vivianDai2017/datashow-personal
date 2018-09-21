@@ -1,7 +1,5 @@
 <template>
-  <div id="VeBar" :style="{width: '100%', height: '84.630vh'}">
-    <img class="VeBarGif" src="../assets/image/right_01.gif" alt="">
-  </div>
+  <div id="VeBar" :style="{width: '100%', height: '84.630vh'}"></div>
 </template>
 
 <script>
@@ -172,9 +170,5 @@ export default {
   #VeBar{
     background-image: url("../assets/image/box_left.png");
     background-size: 100% 100%;
-    .VeBarGif{
-      width: 11.302vw;
-      height: 15.833vh;
-    }
   }
 </style>

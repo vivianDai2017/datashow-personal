@@ -334,8 +334,6 @@ export default {
 </script>
 
 <style>
-  #VeMap{
-    background-color: #000;
-  }
+  
 </style>
 

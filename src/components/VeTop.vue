@@ -1,6 +1,12 @@
 <template>
   <div class="top">
-    <div>左边</div>
+    <div class="lineImg">
+      <div class="topLine">
+        <div class="longLine"></div>
+        <div class="shortLine"></div>
+      </div>
+      <div class="btmLine"></div>
+    </div>
     <div class="title">
       云巢智能综合大数据平台
       <div><img class="topImg" src="../assets/image/top_01.gif"/></div>
@@ -53,8 +59,30 @@ export default {
   .top{
     display: flex;
     justify-content: space-around;
-    background-color: #000;
-
+    .lineImg{
+      margin-top: 4.63vh;
+      .topLine{
+        display: flex;
+        margin-bottom: 1vh;
+        div{
+          height: 0.1vh;
+          opacity: 0.6;
+          background-color: #59ebe8;
+        }
+        .longLine{
+          width: 15.938vw;
+        }
+        .shortLine{
+          width: 1.094vw;
+          margin-left: 0.5vw;
+        }
+      }
+      .btmLine{
+        width: 22vw;
+        height: 0.1vh;
+        background-color: rgba(88,235,232,0.3);
+      }
+    }
     .title{
     flex: 1;
     margin-top: 1vh;
@@ -73,7 +101,7 @@ export default {
       display: inline-block;
       width: 14vw;
       line-height: 3.704vh;
-      border-bottom: 0.1vh solid #59ebe8;
+      border-bottom: 0.1vh solid rgba(88,235,232,0.51);
       font-size: 0.938vw;
       color: #59ebe8;
       font-family: SourceHanSansCN-Normal;

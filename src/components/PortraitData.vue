@@ -1,11 +1,11 @@
 <template>
   <div class="portraitData">
-    <div class="portrait">
-      <img src="portraitUrl" alt="">
+    <div>
+      <img class="portrait" :src="item.imgUrl" alt="">
     </div>
     <div class="users">
-      <div class="user">{{user}}</div>   
-      <div class="ratio">{{tatio}}</div>
+      <div class="user">{{item.user}}</div>   
+      <div class="ratio">{{item.ratio}}</div>
     </div>
   </div>
 </template>
@@ -14,9 +14,7 @@
 export default {
   name: "PortraitData",
   props: {
-    portraitUrl: String,
-    user: String,
-    ratio: String
+    item: Object
   }
 }
 </script>
@@ -24,7 +22,17 @@ export default {
 <style lang="less">
   .portraitData{
     display: flex;
-    
+    margin-left: 2.865vw;
+    margin-top: 2.074vh;
+    .portrait{
+      width: 3.125vw;
+      height: 8.333vh;
+    }
+    .users{
+      padding-top: 4.0vh;
+      font-size: 0.885vw;
+      color: #59ebe8;
+    }
   }
 </style>
 

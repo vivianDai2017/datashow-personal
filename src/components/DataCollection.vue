@@ -21,11 +21,7 @@
 
 <script>
 // @ is an alias to /src
-// import VeTop from "@/components/VeTop.vue";
-// import VeBar from "@/components/VeBar.vue";
 import TotalData from "./TotalData.vue";
-// 引入iconfont
-// import "./assets/iconfont/iconfont.css";
 
 export default {
   name: "DataCollection",
@@ -43,7 +39,6 @@ export default {
   height: 17.778vh;
   background-image: url("../assets/image/box_right1.png");
   background-size: 100% 100%;
-  background-color: #000;
   display: flex;
   .total{
     flex: 48;
@@ -60,6 +55,7 @@ export default {
   }
   .classify{
     flex: 51;
+    margin-top: 1.481vh;
     .flex();
     flex-wrap: wrap;
     .classify-item{

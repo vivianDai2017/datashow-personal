@@ -6,8 +6,8 @@
     <div class="b">
       <div class="l">
         <VeBar></VeBar>
-        <img class="VeBarGif rTop" src="./assets/image/right_01.gif" alt="">
-        <img class="VeBarGif lBtm" src="./assets/image/right_01.gif" alt="">
+        <img class="veBarGif rTop" src="./assets/image/right_01.gif" alt="">
+        <img class="veBarGif lBtm" src="./assets/image/right_01.gif" alt="">
       </div>
       <div class="r">
         <div class="rt">
@@ -20,6 +20,7 @@
               <div class="rtrb-item"><VePie></VePie></div>
               <div class="rtrb-item">
                 <UsersPortrait></UsersPortrait>
+                <img class="vePieGif" src="./assets/image/right_down.gif" alt="">
               </div>
             </div>
           </div>
@@ -80,7 +81,8 @@ export default {
   .flexY();
   padding: 2.78vh 2.604vw 3.241vh 2.40vw;
   background-image: url("./assets/image/bg.png");
-  background-size: 100% 100%;
+  background-size: 100vw 100vh;
+  background-repeat: no-repeat;
 }
 .t {
   flex: 88;
@@ -95,7 +97,7 @@ export default {
     width: 16.094vw;
     height: 84.630vh;
     position: relative;
-    .VeBarGif{
+    .veBarGif{
       width: 11.302vw;
       height: 15.833vh;
       position: absolute;
@@ -138,9 +140,17 @@ export default {
           background-image: url("./assets/image/box_right2.png");
           background-size: 100% 100%;
           margin-bottom: 1.667vh;
+          position: relative;
           .flex();
           .rtrb-item{
             flex: 1;
+            .vePieGif{
+              width: 6.25vw;
+              height: 0.926vh;
+              position: absolute;
+              bottom: 0.900vh;
+              right: 1.302vw;
+            }
           }
         }
       }

@@ -219,6 +219,17 @@ export default {
           value: 0
         }
       ];
+      // let levelColorMap = {
+      //   1: 'rgba(241, 109, 115, .8)',
+      //   2: 'rgba(255, 235, 59, .7)',
+      //   3: 'rgba(147, 235, 248, 1)'
+      // };
+      // let levelColorMap = [
+      //   {1: 'rgba(241, 109, 115, .8)'},
+      //   {2: 'rgba(255, 235, 59, .7)'},
+      //   {3: 'yellow'}
+      // ];
+      
       let VeMap = echarts.init(document.getElementById("VeMap"));
       // console.log(VeMap);
       VeMap.setOption({
@@ -310,16 +321,19 @@ export default {
             coordinateSystem: 'geo',
             showEffectOn: 'render',
             rippleEffect: {
-                // period:15,
-                // scale: 4,
+                period:15,
+                scale: 4,
                 brushType: 'fill'
             },
             hoverAnimation: true,
             itemStyle: {
                 normal: {
-                    color: "green",
-                    shadowBlur: 5,
-                    shadowColor: "red"
+                    color: "rbg(255,0,0)",
+                    // color: function(params){
+                    //   return levelColorMap[3];
+                    // },
+                    shadowBlur: 10,
+                    // shadowColor: "red"
                 }
             },
              zlevel: 12,

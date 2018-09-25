@@ -13,8 +13,6 @@ let echarts = require("echarts/lib/echarts");
 require("echarts/lib/chart/line");
 // 引入标题组件
 require("echarts/lib/component/title");
-console.log(echarts);
-console.log(11);
 export default {
   name: "VeLine",
   data() {
@@ -104,7 +102,8 @@ export default {
             lineStyle: {
               color: "#fff"
             } 
-          }
+          },
+          // minInterval: 500
         },
         grid: {
           top: "20%",
@@ -117,11 +116,7 @@ export default {
             type: "line",
             // 是否显示标记的图形
             showSymbol: false,
-            smooth: true,
-            // itemStyle: {
-            //   color: "yellow",
-            //   borderType: "dotted"
-            // },
+            // smooth: true,
             lineStyle: {
               color: color,
               width: 1
@@ -136,9 +131,11 @@ export default {
       for(let i = 0; i < this.items.length; i++){
         this.drawLine(this.items[i].lineId, this.items[i].title, this.items[i].color, this.items[i].data);
       }
+    },
+    getData() {
+      console.log("请求数据");
     }
-  }
-  
+  }  
 }
 </script>
 
